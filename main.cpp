@@ -5,6 +5,7 @@ class StackOverflowException {};
 template <class DT>
 class ArrayStack {
     int _top;
+    //ArrayClass is not implemented.
     ArrayClass<DT>* myStack;
 public:
     ArrayStack();
@@ -31,6 +32,7 @@ void ArrayStack<DT>::push(DT& x) {
 template <class DT>
 class LLStack {
 protected:
+    //LinkedList is not implemented.
     LinkedList<DT>* S;
 public:
     DT& pop();
@@ -39,12 +41,15 @@ public:
 template <class DT>
 DT& LLStack<DT>::pop()
 {
+    //Check if the current value is equal to null.
     if (_info == NULL) {
         throw StackOverflowException();
     }
     else
     {
+        //LinkedList#info returns the value of the current node.
         DT temp = (*s).info();
+        //LinkedList#remove removes the current node.
         (*s).remove();
         return temp;
     }
